@@ -1,8 +1,8 @@
 
 # Genetic Algorithm imported frrom GitHub
 # author: Ahmed Gad (original)
-# update: A Rusinko
 # https://github.com/ahmedfgad/GeneticAlgorithmPython/blob/master/GA.py
+# update: A Rusinko
 
 import numpy
 
