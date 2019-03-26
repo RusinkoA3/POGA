@@ -1,3 +1,8 @@
+Since genetic algorithms employ "randomness" througout the calculations, this is an example of a stochastic process
+that leads to non-deterministic answers. Note that while the input vectors are the same in the cases below, slightly
+different results arise.
+
+
 D:\Anaconda3\python.exe C:/Users/Rusin/PycharmProjects/POGA/POGA.py
 Generation :  0 		Best result :  0.0001
 Generation :  5 		Best result :  57.33945
@@ -23,4 +28,5 @@ Best solution :  [1.1   0.899 0.79  0.65 ]
 Optimal Fitness= 59.13311 in 23 generations
 Floor values:  [0.65, 0.65, 0.65, 0.65]
 Ceiling values:  [1.1, 1.0, 0.9, 0.8]
+
 
