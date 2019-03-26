@@ -1,0 +1,26 @@
+D:\Anaconda3\python.exe C:/Users/Rusin/PycharmProjects/POGA/POGA.py
+Generation :  0 		Best result :  0.0001
+Generation :  5 		Best result :  57.33945
+Generation :  10 		Best result :  59.12961
+Generation :  15 		Best result :  59.13661
+
+Original guess:  [1.15, 0.9, 0.79, 0.53]
+Best solution :  [1.1  0.9  0.79 0.65]
+Optimal Fitness= 59.13661 in 16 generations
+Floor values:  [0.65, 0.65, 0.65, 0.65]
+Ceiling values:  [1.1, 1.0, 0.9, 0.8]
+
+------------------------------------------------------------
+
+Generation :  0 		Best result :  0.0001
+Generation :  5 		Best result :  56.96608
+Generation :  10 		Best result :  59.04931
+Generation :  15 		Best result :  59.11913
+Generation :  20 		Best result :  59.13311
+
+Original guess:  [1.15, 0.9, 0.79, 0.53]
+Best solution :  [1.1   0.899 0.79  0.65 ]
+Optimal Fitness= 59.13311 in 23 generations
+Floor values:  [0.65, 0.65, 0.65, 0.65]
+Ceiling values:  [1.1, 1.0, 0.9, 0.8]
+
