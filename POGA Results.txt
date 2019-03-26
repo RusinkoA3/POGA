@@ -1,6 +1,6 @@
 Since genetic algorithms employ "randomness" througout the calculations, this is an example of a stochastic process
-that leads to non-deterministic answers. Note that while the input vectors are the same in the cases below, slightly
-different results arise.
+that leads to non-deterministic solutions. Note that while the input vectors are the same in the cases below, slightly
+different results can occur.
 
 
 D:\Anaconda3\python.exe C:/Users/Rusin/PycharmProjects/POGA/POGA.py
