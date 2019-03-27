@@ -2,7 +2,7 @@
 #
 #                   POGA: Price Optimiaztion via Genetic Algorithm
 #
-#                             A. Rusinko  (3/24/2019) v1.0
+#                             A. Rusinko  (3/27/2019) v1.01
 # ---------------------------------------------------------------------------------------------------------------
 import sys
 import numpy
@@ -83,21 +83,21 @@ def main(argv):
 
     # Input1 for POGA
     if inputval == 1:
-        guess      = [1.15, 0.9, 0.79, 0.53]
+        oguess     = [1.15, 0.9, 0.79, 0.53]
         floor      = [0.65, 0.65, 0.65, 0.65]
         ceiling    = [1.1, 1.0, 0.9, 0.8]
         quantities = [1, 5, 10, 25]
 
     # Input2 for POGA
     elif inputval == 2:
-        guess      = [1.15, 0.88, 0.89, 0.63, 0.6, 0.58, 0.59]
+        oguess      = [1.15, 0.88, 0.89, 0.63, 0.6, 0.58, 0.59]
         floor      = [0.65, 0.65, 0.65, 0.65, 0.65, 0.65, 0.65]
         ceiling    = [1.1, 1.0, 0.9, 0.8, 0.8, 0.8, 0.8]
         quantities = [1, 5, 10, 25, 50, 100, 250]
 
     # Basic GA control parameters
     sol_per_pop = 1000                          # solutions per population
-    num_prices  = len(guess)                    # number of genes per chromosome
+    num_prices  = len(oguess)                    # number of genes per chromosome
     num_parents_mating = 50                     # number of top individuals allowed to mate
     max_num_generations = 1000                      # max number of generations
     max_optimal = 5                             # stopping criteria for no progress
@@ -106,7 +106,7 @@ def main(argv):
     pop_size = (sol_per_pop, num_prices)
     
     # Guess prices must be greater than floor values (AR 3/27)
-    guess = [ x if x>=floor[i] else floor[i] for i,x in enumerate(guess)]
+    guess = [ x if x>=floor[i] else floor[i] for i,x in enumerate(oguess)]
 
     # Creating the initial population.
     new_population = numpy.zeros(pop_size)
@@ -160,22 +160,22 @@ def main(argv):
     # Identify the best solution obtained
     best_value     = max(pop_fitness)
     best_match_idx = pop_fitness.index(best_value)
-    print("\nOriginal guess: ", guess)
+    print("\nOriginal guess: ", oguess)
     print("Best solution : ", numpy.round(new_population[best_match_idx, :],3))
     print("Optimal Fitness=", best_value,"in",generation,"generations")
     print("Floor values: ", floor)
     print("Ceiling values: ", ceiling)
 
     # Plot the solution space
-    pyplot.plot(quantities, guess, color='blue', marker='o',linewidth=0.75, label='Initial')
+    pyplot.plot(quantities, oguess, color='blue', marker='o',linewidth=0.75, label='Initial')
     pyplot.plot(quantities, new_population[best_match_idx, :] , color='red', marker='o',linewidth=0.75,label='Optimal')
     pyplot.plot(quantities, ceiling , color='green', linestyle='dashed',linewidth=0.75,label='Ceiling')
     pyplot.plot(quantities, floor, color='black',label='Floor')
 
     # Build polygon of possible solution space
     sol_space_x = quantities + quantities[::-1]
-    sol_space_y = [1.15*x for x in guess]
-    sol_space_y.extend([0.85*x for x in guess[::-1]])
+    sol_space_y = [1.15*x for x in oguess]
+    sol_space_y.extend([0.85*x for x in oguess[::-1]])
     pyplot.fill(sol_space_x, sol_space_y, 'b', alpha=0.1 )
 
     # Decorate plot
