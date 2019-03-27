@@ -104,6 +104,9 @@ def main(argv):
 
     # The population will have sol_per_pop chromosome where each chromosome has num_prices genes.
     pop_size = (sol_per_pop, num_prices)
+    
+    # Guess prices must be greater than floor values (AR 3/27)
+    guess = [ x if x>=floor[i] else floor[i] for i,x in enumerate(guess)]
 
     # Creating the initial population.
     new_population = numpy.zeros(pop_size)
