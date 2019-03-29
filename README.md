@@ -8,4 +8,7 @@ violations allowed).
 
 This is an example of code re-use, i.e. I started by using code from another's Github page.
 
+Figure 1 shows a trivial example of the calculation while Figure 2 shows the progression of
+the genetic algorithm itself.
+
 GeneticAlgorithm.py should be loaded into a seperate module for use.
